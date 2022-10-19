@@ -1,13 +1,13 @@
 import Counter from "./components/Counter";
 import Hello from "./components/Hello";
-import SearchForm from "./components/Search/SearchForm";
+import Search from "./components/Search";
 
 function App() {
   return (
     <div>
-      <Hello/>
+      <Hello title="Epam"/>
       <Counter/>
-      <SearchForm/>
+      <Search/>
     </div>
   );
 }
