@@ -1,15 +1,11 @@
-import Counter from "./components/Counter";
-import Hello from "./components/Hello";
-import Search from "./components/Search";
+import Home from "./pages/Home";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div>
-      <Hello title="Epam"/>
-      <Counter/>
-      <Search/>
+      <Home />
     </div>
   );
-}
+};
 
 export default App;
