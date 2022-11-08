@@ -4,12 +4,12 @@ import Filter from "../Filter/Filter";
 import MovieCardList from "../MovieCardList/MovieCardList";
 import classes from "./MovieSearchResult.module.css";
 
-interface MovieSearchResult {
+interface MovieSearchResultProps {
   count: number;
   movies: Movie[];
 }
 
-const MovieSearchResult: React.FC<MovieSearchResult> = ({ count, movies }) => {
+const MovieSearchResult: React.FC<MovieSearchResultProps> = ({ count, movies }) => {
   return (
     <div className={classes.movies}>
       <Filter />
