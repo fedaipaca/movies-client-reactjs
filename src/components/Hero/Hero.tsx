@@ -1,5 +1,5 @@
 import AddMovie from "../AddMovie/AddMovie";
-import Brand from "../Brand/Brand";
+import Brand from "../Logo/Logo";
 import SearchMovie from "../SearchMovie/SearchMovie";
 import classes from "./Hero.module.css";
 
