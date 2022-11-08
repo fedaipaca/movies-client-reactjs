@@ -3,6 +3,7 @@ import Filter from "../Filter/Filter";
 
 import MovieCardList from "../MovieCardList/MovieCardList";
 import classes from "./MovieSearchResult.module.css";
+import MovieSearchResultCount from "./MovieSearchResultCount";
 
 interface MovieSearchResultProps {
   count: number;
@@ -13,9 +14,7 @@ const MovieSearchResult: React.FC<MovieSearchResultProps> = ({ count, movies }) 
   return (
     <div className={classes.movies}>
       <Filter />
-      <p>
-        <span>{count}</span> movies found
-      </p>
+      <MovieSearchResultCount count={count} />
       <MovieCardList movies={movies} />
     </div>
   );
