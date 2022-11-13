@@ -10,7 +10,6 @@ const Header: React.FC = () => {
         <div className={classes["header-bg__overlay"]}></div>
       </div>
       <div className={classes["header__nav"]}>
-        {}
         <Brand />
         <AddMovie />
       </div>
