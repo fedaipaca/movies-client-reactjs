@@ -1,9 +1,9 @@
-.hero {
+.header {
   padding: 1rem 3rem;
   position: relative;
 }
 
-.hero-bg {
+.header-bg {
   background-image: url("https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
   background-position: center;
   background-repeat: no-repeat;
@@ -18,7 +18,7 @@
 
 }
 
-.hero-bg__overlay {
+.header-bg__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,18 +27,18 @@
   background-color: black;
   opacity: 0.8;
 }
-.hero__nav {
+.header__nav {
   display: flex;
   justify-content: space-between;
   z-index: 10;
 }
 
-.hero__content {
+.header__content {
   padding: 0.5rem 3rem 6rem 3rem;
   z-index: 10;
 }
 
-.hero__title {
+.header__title {
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: lighter;

@@ -1,5 +1,5 @@
 import Footer from "../components/Footer/Footer";
-import Hero from "../components/Hero/Hero";
+import Hero from "../components/Hero/Header";
 import MovieSearchResult from "../components/MovieSearchResult/MovieSearchResult";
 import { movies } from "../data/movies";
 import classes from "./Home.module.css";
