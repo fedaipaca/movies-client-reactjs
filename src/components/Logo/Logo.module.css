@@ -1,0 +1,14 @@
+.logo{
+  color: #f65261;
+  background-color: transparent;
+  border: none;
+  font-size: 1.25rem;
+}
+
+.logo--left {
+  font-weight: bolder;
+}
+
+.logo--right {
+  font-weight: lighter;
+}
