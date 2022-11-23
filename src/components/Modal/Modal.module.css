@@ -16,6 +16,7 @@
   height: max-content;
   padding: 2rem;
   color: white;
+  width: 32rem;
 }
 
 .modalHeader{
@@ -34,4 +35,48 @@
   background-color: transparent;
   color: inherit;
   border: none;
+}
+
+.modalBody form label {
+  display: block;
+  color: #f65261;
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+.modalBody form input, 
+.modalBody form select, 
+.modalBody form textarea{
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  font-size: 1rem;
+  background-color: #424242;
+  border: none;
+  margin: 0;
+  color: white;
+}
+
+.modalFooter{
+  text-align: right;
+}
+.modalCancel, .modalSubmit{
+  padding: .5rem 2rem;
+  font-size: 1rem;
+  border: none;
+  text-transform: uppercase;
+}
+
+.modalCancel{
+  border: 1px solid #f65261;
+  color: #f65261;
+  background-color: transparent;
+}
+.modalSubmit{
+  border: 1px solid #f65261;
+  color: white;
+  background-color: #f65261;
+  margin-left: 1rem;
 }
