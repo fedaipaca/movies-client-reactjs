@@ -10,10 +10,12 @@ const DeleteMovie: React.FC = () => {
   return (
     <>
       <button className={classes.btn} onClick={() => toggle()}>
-        Delete Movie
+        Delete
       </button>
       <Modal show={modal} close={toggle} title="Delete Movie">
-        This is add delete form
+        <form>
+          <p>Are you sure you want to delete this movie?</p>
+        </form>
       </Modal>
     </>
   );
