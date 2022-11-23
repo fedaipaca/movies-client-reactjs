@@ -1,9 +1,15 @@
-import Home from "./pages/Home";
+import { movies } from "./data/movies";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import MovieSearchResult from "./components/MovieSearchResult/MovieSearchResult";
+import classes from "./App.module.css";
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Home />
+    <div className={classes.container}>
+      <Header />
+      <MovieSearchResult count={39} movies={movies} />
+      <Footer />
     </div>
   );
 };
