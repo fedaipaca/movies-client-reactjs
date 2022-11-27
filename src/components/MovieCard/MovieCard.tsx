@@ -10,12 +10,11 @@ const MovieCard: React.FC<Movie> = ({ id, name, genre, year, poster }) => {
   return (
     <div className={classes.card}>
       <div className={classes.cardMenu}>
-        {!menuVisible && (
+        {!menuVisible ? (
           <button className={classes.closeMenuButton} onClick={() => setMenuVisible(true)}>
             ...
           </button>
-        )}
-        {menuVisible && (
+        ) : (
           <div className={classes.menuContainer}>
             <button onClick={() => setMenuVisible(false)}>Close</button>
             <EditMovie />
