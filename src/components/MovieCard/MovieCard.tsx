@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Movie } from "../../models/Movie.model";
+import { Movie } from "../../store";
 import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import EditMovie from "../EditMovie/EditMovie";
 import classes from "./MovieCard.module.css";
 
-const MovieCard: React.FC<Movie> = ({ id, name, genre, year, poster }) => {
+const MovieCard: React.FC<Movie> = ({ id, name, genres, year, poster }) => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (
@@ -29,7 +29,7 @@ const MovieCard: React.FC<Movie> = ({ id, name, genre, year, poster }) => {
           <span className={classes["card__name"]}>{name}</span>
           <span className={classes["card__year"]}>{year}</span>
         </p>
-        <p className={classes["card__genre"]}>{genre?.join(" & ")}</p>
+        <p className={classes["card__genre"]}>{genres?.join(" & ")}</p>
       </div>
     </div>
   );

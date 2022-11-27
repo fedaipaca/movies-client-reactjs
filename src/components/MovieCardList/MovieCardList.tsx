@@ -1,4 +1,4 @@
-import { Movie } from "../../models/Movie.model";
+import { Movie } from "../../store";
 import MovieCard from "../MovieCard/MovieCard";
 import classes from "./MovieCardList.module.css";
 
@@ -14,7 +14,7 @@ const MovieCardList: React.FC<Movies> = ({ movies }) => {
           key={movie.id}
           id={movie.id}
           name={movie.name}
-          genre={movie.genre}
+          genres={movie.genres}
           year={movie.year}
           poster={movie.poster}
         />

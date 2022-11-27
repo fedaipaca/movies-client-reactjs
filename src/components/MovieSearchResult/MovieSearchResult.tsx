@@ -1,15 +1,12 @@
-import { Movie } from "../../models/Movie.model";
+import { useMovies } from "../../store";
 import ArrangeMovies from "../ArrangeMovies/ArrangeMovies";
 
 import MovieCardList from "../MovieCardList/MovieCardList";
 import classes from "./MovieSearchResult.module.css";
 import MovieSearchResultCount from "./MovieSearchResultCount";
 
-interface MovieSearchResultProps {
-  movies: Movie[];
-}
-
-const MovieSearchResult: React.FC<MovieSearchResultProps> = ({ movies }) => {
+const MovieSearchResult: React.FC = () => {
+  const { movies } = useMovies();
   return (
     <div className={classes.movies}>
       <ArrangeMovies />
