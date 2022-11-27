@@ -1,5 +1,5 @@
 import { Movie } from "../../models/Movie.model";
-import Filter from "../Filter/Filter";
+import ArrangeMovies from "../ArrangeMovies/ArrangeMovies";
 
 import MovieCardList from "../MovieCardList/MovieCardList";
 import classes from "./MovieSearchResult.module.css";
@@ -12,7 +12,7 @@ interface MovieSearchResultProps {
 const MovieSearchResult: React.FC<MovieSearchResultProps> = ({ movies }) => {
   return (
     <div className={classes.movies}>
-      <Filter />
+      <ArrangeMovies />
       <MovieSearchResultCount count={movies.length} />
       <MovieCardList movies={movies} />
     </div>
