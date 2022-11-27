@@ -1,3 +1,4 @@
+import { useMovies } from "../../../store";
 import classes from "./FilterOption.module.css";
 
 interface FilterOptionProps {
@@ -7,9 +8,13 @@ interface FilterOptionProps {
 }
 
 const FilterOption: React.FC<FilterOptionProps> = ({ id, title, isActive = false }) => {
+  const { setFilterBy } = useMovies();
   return (
     <li>
-      <button className={`${classes["filter__genre"]} ${isActive ? classes["filter__genre--active"] : ""}`}>
+      <button
+        onClick={() => setFilterBy(title)}
+        className={`${classes["filter__genre"]} ${isActive ? classes["filter__genre--active"] : ""}`}
+      >
         {title}
       </button>
     </li>

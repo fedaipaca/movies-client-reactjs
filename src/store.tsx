@@ -11,9 +11,9 @@ export interface Movie {
 function useMoviesSource(): {
   movies: Movie[];
   filterBy: string;
-  setFilterBy: (search: string) => void;
+  setFilterBy: (filterBy: string) => void;
   sortBy: string;
-  setSortBy: (search: string) => void;
+  setSortBy: (sortBy: string) => void;
 } {
   type MoviesState = {
     movies: Movie[];
@@ -56,6 +56,7 @@ function useMoviesSource(): {
   }, []);
 
   const setFilterBy = useCallback((filterBy: string) => {
+    console.log(filterBy);
     dispatch({
       type: "setFilterBy",
       payload: filterBy,
@@ -70,7 +71,7 @@ function useMoviesSource(): {
   }, []);
 
   const filteredMovies = useMemo(() => {
-    if (!filterBy) {
+    if (!filterBy || filterBy === "All") {
       return movies;
     }
     return movies.filter((movie) =>

@@ -1,3 +1,4 @@
+import { useMovies } from "../../../store";
 import classes from "./Filter.module.css";
 import FilterOption from "./FilterOption";
 
@@ -10,10 +11,11 @@ const filters = [
 ];
 
 const Filter: React.FC = () => {
+  const { filterBy } = useMovies();
   return (
     <ul className={classes["filter__genres"]}>
       {filters?.map((filter) => (
-        <FilterOption key={filter.id} id={filter.id} title={filter.title} isActive={filter.title === "All"} />
+        <FilterOption key={filter.id} id={filter.id} title={filter.title} isActive={filter.title === filterBy} />
       ))}
     </ul>
   );
