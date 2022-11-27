@@ -3,16 +3,16 @@ import Modal from "../Modal/Modal";
 import classes from "./EditMovie.module.css";
 
 const EditMovie: React.FC = () => {
-  const [modal, setModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggle = () => setModal(!modal);
+  const toggle = () => setIsModalOpen(!isModalOpen);
 
   return (
     <>
       <button className={classes.btn} onClick={() => toggle()}>
         Edit
       </button>
-      <Modal show={modal} close={toggle} title="Edit Movie">
+      <Modal isVisible={isModalOpen} close={toggle} title="Edit Movie">
         <form>
           <p>
             <label htmlFor="movieTitle">Title</label>
