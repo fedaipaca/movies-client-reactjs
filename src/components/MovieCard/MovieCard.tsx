@@ -1,14 +1,20 @@
 import { useState } from "react";
-import { Movie } from "../../store";
+import { Movie, useMovies } from "../../store";
 import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import EditMovie from "../EditMovie/EditMovie";
 import classes from "./MovieCard.module.css";
 
 const MovieCard: React.FC<Movie> = ({ id, name, genres, year, poster }) => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const { setSelectedMovieId } = useMovies();
+
+  function onMovieCardClick(e: React.MouseEvent<HTMLElement>) {
+    e.stopPropagation();
+    setSelectedMovieId(id);
+  }
 
   return (
-    <div className={classes.card}>
+    <div onClick={onMovieCardClick} className={classes.card}>
       <div className={classes.cardMenu}>
         {!menuVisible ? (
           <button className={classes.closeMenuButton} onClick={() => setMenuVisible(true)}>

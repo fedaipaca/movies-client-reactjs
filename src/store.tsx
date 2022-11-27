@@ -1,4 +1,4 @@
-import { useReducer, useEffect, createContext, useContext, useCallback, useMemo } from "react";
+import { useReducer, useEffect, createContext, useContext, useCallback, useMemo, useState } from "react";
 
 export interface Movie {
   id: string;
@@ -14,6 +14,8 @@ function useMoviesSource(): {
   setFilterBy: (filterBy: string) => void;
   sortBy: string;
   setSortBy: (sortBy: string) => void;
+  selectedMovie: Movie | undefined;
+  setSelectedMovieId: (movieId: string) => void;
 } {
   type MoviesState = {
     movies: Movie[];
@@ -55,8 +57,9 @@ function useMoviesSource(): {
       );
   }, []);
 
+  const [selectedMovie, setSelectedMovie] = useState<Movie | undefined>(undefined);
+
   const setFilterBy = useCallback((filterBy: string) => {
-    console.log(filterBy);
     dispatch({
       type: "setFilterBy",
       payload: filterBy,
@@ -69,6 +72,15 @@ function useMoviesSource(): {
       payload: sortBy,
     });
   }, []);
+
+  const setSelectedMovieId = useCallback(
+    (movieId: string) => {
+      console.log(movieId);
+      const movie = movies.find((movie) => movie.id === movieId);
+      setSelectedMovie(movie);
+    },
+    [setSelectedMovie, movies]
+  );
 
   const filteredMovies = useMemo(() => {
     if (!filterBy || filterBy === "All") {
@@ -89,7 +101,7 @@ function useMoviesSource(): {
     }
   }, [filteredMovies, sortBy]);
 
-  return { movies: sortedMovies!, filterBy, setFilterBy, sortBy, setSortBy };
+  return { movies: sortedMovies!, filterBy, setFilterBy, sortBy, setSortBy, selectedMovie, setSelectedMovieId };
 }
 
 const MoviesContext = createContext<ReturnType<typeof useMoviesSource>>(
