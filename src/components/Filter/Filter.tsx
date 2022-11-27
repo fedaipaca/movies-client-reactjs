@@ -9,7 +9,7 @@ const filters = [
   { id: "e5", title: "Crime" },
 ];
 
-const years = [2022, 2021, 2020, 2019];
+const sortingCriterias = ["Release Date", "Name"];
 
 const Filter: React.FC = () => {
   return (
@@ -20,14 +20,14 @@ const Filter: React.FC = () => {
         ))}
       </ul>
       <div className={classes["filter__sort"]}>
-        <label htmlFor="release-date" className={classes["filter__sort-tag"]}>
+        <label htmlFor="sortBy" className={classes["filter__sort-tag"]}>
           SORT BY
         </label>
-
-        <select name="years" id="release-date">
-          <option value="">RELEASE DATE</option>
-          {years.map((year) => (
-            <option key={year} value={year}>{year}</option>
+        <select defaultValue="Release Date" name="sortBy" id="sortBy">
+          {sortingCriterias.map((criteria) => (
+            <option key={criteria} value={criteria}>
+              {criteria}
+            </option>
           ))}
         </select>
       </div>
