@@ -1,4 +1,4 @@
-import { movies } from "./data/movies";
+import movies from "./data/movies.json";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import MovieSearchResult from "./components/MovieSearchResult/MovieSearchResult";
