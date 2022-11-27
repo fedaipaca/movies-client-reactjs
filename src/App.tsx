@@ -8,7 +8,7 @@ const App: React.FC = () => {
   return (
     <div className={classes.container}>
       <Header />
-      <MovieSearchResult count={39} movies={movies} />
+      <MovieSearchResult movies={movies} />
       <Footer />
     </div>
   );
