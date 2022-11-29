@@ -5,13 +5,13 @@ import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import EditMovie from "../EditMovie/EditMovie";
 import classes from "./MovieCard.module.css";
 
-const MovieCard: React.FC<Movie> = ({ id, name, genres, year, poster }) => {
+const MovieCard: React.FC<Movie> = ({ id, name, genres, year, poster, runtime, description }) => {
   const [menuVisible, setMenuVisible] = useState(false);
-  const { setSelectedMovieId } = useMovies();
+  const { onSelectMovie } = useMovies();
 
   function onMovieCardClick(e: React.MouseEvent<HTMLElement>) {
     e.stopPropagation();
-    setSelectedMovieId(id);
+    onSelectMovie(id);
   }
 
   return (

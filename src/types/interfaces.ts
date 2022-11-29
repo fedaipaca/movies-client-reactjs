@@ -4,4 +4,6 @@ export interface Movie {
   genres: string[];
   year: number;
   poster: string;
+  runtime: number;
+  description: string
 }

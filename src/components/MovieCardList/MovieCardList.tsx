@@ -17,6 +17,8 @@ const MovieCardList: React.FC<Movies> = ({ movies }) => {
           genres={movie.genres}
           year={movie.year}
           poster={movie.poster}
+          runtime={movie.runtime}
+          description={movie.description}
         />
       ))}
     </div>

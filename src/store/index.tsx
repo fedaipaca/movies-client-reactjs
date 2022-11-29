@@ -8,7 +8,7 @@ function useMoviesSource(): {
   sortBy: string;
   setSortBy: (sortBy: string) => void;
   selectedMovie: Movie | undefined;
-  setSelectedMovieId: (movieId: string) => void;
+  onSelectMovie: (movieId: string) => void;
 } {
   type MoviesState = {
     movies: Movie[];
@@ -66,7 +66,7 @@ function useMoviesSource(): {
     });
   }, []);
 
-  const setSelectedMovieId = useCallback(
+  const onSelectMovie = useCallback(
     (movieId: string) => {
       console.log(movieId);
       const movie = movies.find((movie) => movie.id === movieId);
@@ -94,7 +94,7 @@ function useMoviesSource(): {
     }
   }, [filteredMovies, sortBy]);
 
-  return { movies: sortedMovies!, filterBy, setFilterBy, sortBy, setSortBy, selectedMovie, setSelectedMovieId };
+  return { movies: sortedMovies!, filterBy, setFilterBy, sortBy, setSortBy, selectedMovie, onSelectMovie };
 }
 
 const MoviesContext = createContext<ReturnType<typeof useMoviesSource>>(
