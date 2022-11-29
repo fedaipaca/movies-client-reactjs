@@ -1,20 +1,16 @@
-import { Movie } from "../../models/Movie.model";
-import Filter from "../Filter/Filter";
+import { useMovies } from "../../store";
+import ArrangeMovies from "../ArrangeMovies/ArrangeMovies";
 
 import MovieCardList from "../MovieCardList/MovieCardList";
 import classes from "./MovieSearchResult.module.css";
 import MovieSearchResultCount from "./MovieSearchResultCount";
 
-interface MovieSearchResultProps {
-  count: number;
-  movies: Movie[];
-}
-
-const MovieSearchResult: React.FC<MovieSearchResultProps> = ({ count, movies }) => {
+const MovieSearchResult: React.FC = () => {
+  const { movies } = useMovies();
   return (
     <div className={classes.movies}>
-      <Filter />
-      <MovieSearchResultCount count={count} />
+      <ArrangeMovies />
+      <MovieSearchResultCount count={movies.length} />
       <MovieCardList movies={movies} />
     </div>
   );
