@@ -1,4 +1,4 @@
-import { Movie } from "../../store";
+import { Movie } from "../../types/interfaces";
 import MovieCard from "../MovieCard/MovieCard";
 import classes from "./MovieCardList.module.css";
 

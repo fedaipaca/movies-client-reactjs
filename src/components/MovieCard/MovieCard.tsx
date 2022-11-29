@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Movie, useMovies } from "../../store";
+import { useMovies } from "../../store";
+import { Movie } from "../../types/interfaces";
 import DeleteMovie from "../DeleteMovie/DeleteMovie";
 import EditMovie from "../EditMovie/EditMovie";
 import classes from "./MovieCard.module.css";

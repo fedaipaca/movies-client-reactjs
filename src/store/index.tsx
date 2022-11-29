@@ -1,12 +1,5 @@
 import { useReducer, useEffect, createContext, useContext, useCallback, useMemo, useState } from "react";
-
-export interface Movie {
-  id: string;
-  name: string;
-  genres: string[];
-  year: number;
-  poster: string;
-}
+import { Movie } from "../types/interfaces";
 
 function useMoviesSource(): {
   movies: Movie[];
