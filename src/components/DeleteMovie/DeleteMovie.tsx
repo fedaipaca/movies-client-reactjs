@@ -13,9 +13,7 @@ const DeleteMovie: React.FC = () => {
         Delete
       </button>
       <Modal isVisible={isModalOpen} close={toggle} title="Delete Movie">
-        <form>
-          <p>Are you sure you want to delete this movie?</p>
-        </form>
+        <p>Are you sure you want to delete this movie?</p>
       </Modal>
     </>
   );
