@@ -1,12 +1,12 @@
-import { Movie } from "../../types/interfaces";
+import { Movie } from "../../types/movieTypes";
 import MovieCard from "../MovieCard/MovieCard";
 import classes from "./MovieCardList.module.css";
 
-interface Movies {
+interface MovieCardListProps {
   movies: Movie[];
 }
 
-const MovieCardList: React.FC<Movies> = ({ movies }) => {
+const MovieCardList: React.FC<MovieCardListProps> = ({ movies }) => {
   return (
     <div className={classes.list}>
       {movies?.map((movie) => (

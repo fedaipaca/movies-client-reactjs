@@ -1,5 +1,5 @@
 import { useReducer, useEffect, createContext, useContext, useCallback, useMemo, useState } from "react";
-import { Movie } from "../types/interfaces";
+import { Movie, MoviesAction, MoviesState } from "../types/movieTypes";
 
 function useMoviesSource(): {
   movies: Movie[];
@@ -10,17 +10,6 @@ function useMoviesSource(): {
   selectedMovie: Movie | undefined;
   onSelectMovie: (movieId: string) => void;
 } {
-  type MoviesState = {
-    movies: Movie[];
-    filterBy: string;
-    sortBy: string;
-  };
-
-  type MoviesAction =
-    | { type: "setMovies"; payload: Movie[] }
-    | { type: "setFilterBy"; payload: string }
-    | { type: "setSortBy"; payload: string };
-
   const [{ movies, filterBy, sortBy }, dispatch] = useReducer(
     (state: MoviesState, action: MoviesAction) => {
       switch (action.type) {

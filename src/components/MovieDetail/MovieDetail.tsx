@@ -1,4 +1,4 @@
-import { Movie } from "../../types/interfaces";
+import { Movie } from "../../types/movieTypes";
 import classes from "./MovieDetail.module.css";
 
 const MovieDetail: React.FC<Movie> = ({ id, name, year, genres, poster, runtime, description }) => {
